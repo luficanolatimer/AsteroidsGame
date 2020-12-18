@@ -22,6 +22,10 @@ public void draw()
   for(int i = 0; i < joe.size(); i++) {
     joe.get(i).show();
     joe.get(i).move();
+    float distance = dist((float)bob.getX(), (float)bob.getY(), (float)joe.get(i).getX(), (float)joe.get(i).getY());
+    if(distance < 15) {
+      joe.remove(i);
+    }
   }
 }
 public void keyPressed() {
